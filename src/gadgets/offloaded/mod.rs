@@ -1,8 +1,11 @@
 use crate::snark::{DeferredOpData, OffloadedDataCircuit};
 use ark_ec::{pairing::Pairing, CurveGroup, VariableBaseMSM};
 use ark_r1cs_std::{
-    alloc::AllocVar, eq::EqGadget, fields::fp::FpVar, fields::FieldVar, groups::CurveVar, R1CSVar,
-    ToConstraintFieldGadget,
+    alloc::AllocVar,
+    eq::EqGadget,
+    fields::{fp::FpVar, FieldVar},
+    groups::CurveVar,
+    R1CSVar, ToConstraintFieldGadget,
 };
 use ark_relations::{
     ns,

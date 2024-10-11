@@ -6,15 +6,22 @@ use ark_ec::{
 };
 use ark_ff::{PrimeField, Zero};
 use ark_r1cs_std::{
-    fields::nonnative::params::{get_params, OptimizationType},
-    fields::nonnative::AllocatedNonNativeFieldVar,
+    fields::nonnative::{
+        params::{get_params, OptimizationType},
+        AllocatedNonNativeFieldVar,
+    },
     groups::CurveVar,
     R1CSVar, ToConstraintFieldGadget,
 };
-use ark_relations::r1cs;
-use ark_relations::r1cs::{ConstraintSynthesizer, ConstraintSystemRef, SynthesisError};
+use ark_relations::{
+    r1cs,
+    r1cs::{ConstraintSynthesizer, ConstraintSystemRef, SynthesisError},
+};
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize, SerializationError, Valid};
-use ark_std::{cell::OnceCell, cell::RefCell, rc::Rc};
+use ark_std::{
+    cell::{OnceCell, RefCell},
+    rc::Rc,
+};
 use itertools::Itertools;
 use rand_core::{CryptoRng, RngCore};
 
